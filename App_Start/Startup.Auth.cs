@@ -14,6 +14,7 @@ namespace FullFrameworkAuth
     public partial class Startup
     {
         private static string clientId = ConfigurationManager.AppSettings["ida:ClientId"];
+        private static string clientSecret = ConfigurationManager.AppSettings["ida:ClientSecret"];
         private static string aadInstance = EnsureTrailingSlash(ConfigurationManager.AppSettings["ida:AADInstance"]);
         private static string tenantId = ConfigurationManager.AppSettings["ida:TenantId"];
         private static string postLogoutRedirectUri = ConfigurationManager.AppSettings["ida:PostLogoutRedirectUri"];
@@ -29,9 +30,10 @@ namespace FullFrameworkAuth
                 new OpenIdConnectAuthenticationOptions
                 {
                     ClientId = clientId,
+                    ClientSecret = clientSecret,
                     Authority = authority,
                     PostLogoutRedirectUri = postLogoutRedirectUri
-                });
+                }); ;
         }
 
         private static string EnsureTrailingSlash(string value)
