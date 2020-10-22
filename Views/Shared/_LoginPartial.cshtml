@@ -2,8 +2,8 @@
 {
     <text>
     <ul class="nav navbar-nav navbar-right">
-        <li class="navbar-text">
-            Hello, @User.Identity.Name!
+        <li>
+            @Html.ActionLink(User.Identity.Name, "UserInfo", "Account")
         </li>
         <li>
             @Html.ActionLink("Sign out", "SignOut", "Account")

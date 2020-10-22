@@ -40,5 +40,11 @@ namespace FullFrameworkAuth.Controllers
 
             return View();
         }
+
+        [Authorize]
+        public ActionResult UserInfo()
+        {
+            return View();
+        }
     }
 }
